@@ -6,9 +6,12 @@ public class Employee {
     private String employeeId;
     private String name;
 
-    // One-to-many unary association
+    // One-to-many unary association "manage"
     private Employee manager;
     private ArrayList<Employee> subordinates;
+
+    // One-to-many binary association "supervise"
+    private Department superviseDepartment;
 
     public Employee(String employeeId, String name) {
         this.employeeId = employeeId;
@@ -46,5 +49,13 @@ public class Employee {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public Department getSuperviseDepartment() {
+        return superviseDepartment;
+    }
+
+    public void setSuperviseDepartment(Department superviseDepartment) {
+        this.superviseDepartment = superviseDepartment;
     }
 }
