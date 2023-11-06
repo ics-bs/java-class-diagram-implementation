@@ -9,3 +9,5 @@ This repository contains implementations of the following UML class diagram elem
 - Association class
 
 There is also test code in App.java for testing all of the above
+
+<img width="452" alt="image" src="https://github.com/ics-bs/java-class-diagram-implementation/assets/35000209/8873873e-ad72-48ad-b7f3-56b13c45572c">
