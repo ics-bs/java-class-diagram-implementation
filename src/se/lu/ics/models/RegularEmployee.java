@@ -11,6 +11,23 @@ public class RegularEmployee extends Employee {
         this.salary = salary;
     }
 
+    
+    /*
+     * Managers get 30% extra salary
+     * Developers get 10% extra salary
+     * Other employees get their standard salary
+     */
+    @Override
+    public double calculatePayment() {
+        if(this.title.equals("manager")) {
+            return this.salary * 1.3;
+        } else if(this.title.equals("developer")) {
+            return this.salary * 1.1;
+        } else {
+            return this.salary;
+        }
+    }
+
     public String getTitle() {
         return title;
     }
