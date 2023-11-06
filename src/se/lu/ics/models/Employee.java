@@ -2,7 +2,7 @@ package se.lu.ics.models;
 
 import java.util.ArrayList;
 
-public class Employee {
+public abstract class Employee {
     private String employeeId;
     private String name;
 
@@ -32,6 +32,8 @@ public class Employee {
         subordinates = new ArrayList<Employee>();
         mentorDepartments = new ArrayList<Department>();
     }
+
+    public abstract double calculatePayment();
 
     public void addSubordinate(Employee employee) {
         this.subordinates.add(employee);
