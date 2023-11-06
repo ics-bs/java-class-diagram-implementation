@@ -31,6 +31,7 @@ public abstract class Employee {
         this.name = name;
         subordinates = new ArrayList<Employee>();
         mentorDepartments = new ArrayList<Department>();
+        workRecords = new ArrayList<WorkRecord>();
     }
 
     public abstract double calculatePayment();
