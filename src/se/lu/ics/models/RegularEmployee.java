@@ -11,7 +11,6 @@ public class RegularEmployee extends Employee {
         this.salary = salary;
     }
 
-    
     /*
      * Managers get 30% extra salary
      * Developers get 10% extra salary
