@@ -15,6 +15,13 @@ public class Department {
      */
     private ArrayList<Employee> mentors;
 
+    /*
+     * Many-to-many binary association "work"
+     * with association class WorkRecord
+     * A department can have several employees working for it
+     */
+    private ArrayList<WorkRecord> workRecords;
+
     public Department() {}
 
     public Department(String name, int budget) {
@@ -22,6 +29,7 @@ public class Department {
         this.budget = budget;
         supervisors = new ArrayList<Employee>();
         mentors = new ArrayList<Employee>();
+        workRecords = new ArrayList<WorkRecord>();
     }
 
     public void addSupervisor(Employee employee) {
@@ -30,6 +38,10 @@ public class Department {
 
     public void addMentor(Employee employee) {
         this.mentors.add(employee);
+    }
+
+    public void addWorkRecord(WorkRecord workRecord) {
+        this.workRecords.add(workRecord);
     }
 
     public String getName() {
@@ -54,5 +66,9 @@ public class Department {
 
     public ArrayList<Employee> getMentors() {
         return mentors;
+    }
+
+    public ArrayList<WorkRecord> getWorkRecords() {
+        return workRecords;
     }
 }

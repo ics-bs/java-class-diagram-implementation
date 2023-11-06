@@ -19,6 +19,13 @@ public class Employee {
      */
     private ArrayList<Department> mentorDepartments;
 
+    /*
+     * Many-to-many binary association "work"
+     * with association class WorkRecord
+     * An employee can work for several departments
+     */
+    private ArrayList<WorkRecord> workRecords;
+
     public Employee(String employeeId, String name) {
         this.employeeId = employeeId;
         this.name = name;
@@ -32,6 +39,10 @@ public class Employee {
 
     public void addMentorDepartment(Department department) {
         this.mentorDepartments.add(department);
+    }
+
+    public void addWorkRecord(WorkRecord workRecord) {
+        this.workRecords.add(workRecord);
     }
 
     public Employee getManager() {
@@ -73,5 +84,8 @@ public class Employee {
     public ArrayList<Department> getMentorDepartments() {
         return mentorDepartments;
     }
-    
+
+    public ArrayList<WorkRecord> getWorkRecords() {
+        return workRecords;
+    }
 }
