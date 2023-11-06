@@ -13,14 +13,25 @@ public class Employee {
     // One-to-many binary association "supervise"
     private Department superviseDepartment;
 
+    /*
+     * Many-to-many binary association "mentor"
+     * An employee can be a mentor at several departments
+     */
+    private ArrayList<Department> mentorDepartments;
+
     public Employee(String employeeId, String name) {
         this.employeeId = employeeId;
         this.name = name;
         subordinates = new ArrayList<Employee>();
+        mentorDepartments = new ArrayList<Department>();
     }
 
     public void addSubordinate(Employee employee) {
         this.subordinates.add(employee);
+    }
+
+    public void addMentorDepartment(Department department) {
+        this.mentorDepartments.add(department);
     }
 
     public Employee getManager() {
@@ -58,4 +69,9 @@ public class Employee {
     public void setSuperviseDepartment(Department superviseDepartment) {
         this.superviseDepartment = superviseDepartment;
     }
+
+    public ArrayList<Department> getMentorDepartments() {
+        return mentorDepartments;
+    }
+    
 }

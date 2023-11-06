@@ -6,18 +6,30 @@ public class Department {
     private String name;
     private int budget;
     
-    // One-to-many binary association
+    // One-to-many binary association "supervise"
     private ArrayList<Employee> supervisors;
+
+    /*
+     * Many-to-many binary association "mentor"
+     * A department can have several employees as mentors
+     */
+    private ArrayList<Employee> mentors;
 
     public Department() {}
 
     public Department(String name, int budget) {
         this.name = name;
         this.budget = budget;
+        supervisors = new ArrayList<Employee>();
+        mentors = new ArrayList<Employee>();
     }
 
     public void addSupervisor(Employee employee) {
         this.supervisors.add(employee);
+    }
+
+    public void addMentor(Employee employee) {
+        this.mentors.add(employee);
     }
 
     public String getName() {
@@ -38,5 +50,9 @@ public class Department {
 
     public ArrayList<Employee> getSupervisors() {
         return supervisors;
+    }
+
+    public ArrayList<Employee> getMentors() {
+        return mentors;
     }
 }
